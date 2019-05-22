@@ -1,0 +1,34 @@
+
+Folgende Berechnungszeiten wurden bei einem Human vs AI gemessen:
+
+---------------------------------------------------------
+Dept 3:
+
+1. zug: 		28 ms
+max:			34 ms
+zweitletzter Zug:	10 ms
+-----------------------------
+Depth: 4
+
+1. zug: 		114ms
+max:			290ms
+zweitletzter Zug:	10 ms
+-----------------------------
+Depth: 5
+
+1. zug: 		622 ms
+max:			976 ms
+zweitletzter Zug:	4 ms
+-----------------------------
+Depth: 6
+
+1. zug: 		2495 ms
+max:			2495 ms (Dä wixer het doch scho bim erste zug gwüsst dser gwinnt -.-")
+zweitletzter Zug:	169 ms
+-----------------------------
+Depth 7:
+
+1. zug: 		9166 ms
+max:			12529 ms 
+zweitletzter Zug:	11 ms		Bem: Wird gegen Ende massiv schneller da weniger Züge möglich
+-----------------------------
