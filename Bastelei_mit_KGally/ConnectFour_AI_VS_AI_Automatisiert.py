@@ -1,49 +1,57 @@
 import numpy as np
+
 import random
-import pygame
-import sys
+
 import math
-import time
+import pygame
 
-BLUE = (0, 0, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-YELLOW = (255, 255, 0)
+'''
 
-ROW_COUNT = 6
-COLUMN_COUNT = 7
+Two AI's play C4. Just a testclass with no GUI. 
 
-PLAYER = 0
-AI = 1
 
+'''
+
+#How many rounds shall the bots play?
+AMOUNT_ROUND = 10
+
+#AI Settings
 DEPTH_AI1 = 5  # How deep shall the AI1 search
 DEPTH_AI2 = 4  #  How deep shall the AI2 search
 
 scorecardAI1 = [1000, 5, 5, 5]
 scorecardAI2 = [1000, 5, 2, 15]
 # The score for:
-# - [0]: window of 4 own Pieces
-# - [1]: window of 3 own Pieces and 1 empty
-# - [2]: window of 2 own Pieces and 2 empty
-# - [3]: window of 3 enemy Pieces and 1 empty (counts negative)
-
-print("The Settings are: Depth Ai1:", DEPTH_AI1, " Depth Ai2: ", DEPTH_AI2," Scoreboard1:", scorecardAI1, " Scoreboard2: ", scorecardAI2)
-
+# - [0]: line of 4 own Pieces
+# - [1]: line of 3 own Pieces and 1 empty
+# - [2]: line of 2 own Pieces and 2 empty
+# - [3]: line of 3 enemy Pieces and 1 empty (counts negative)
 # Original Scorecard: Spielt gut, hat aber selten Aussetzter beim erkennen von horizontalen 4er
 # scorecard = [1000, 5, 2, 4]
+print("The Settings are: Depth Ai1:", DEPTH_AI1, " Depth Ai2: ", DEPTH_AI2," Scoreboard1:", scorecardAI1, " Scoreboard2: ", scorecardAI2)
 
 
 # Status of gamefield
+ROW_COUNT = 6
+COLUMN_COUNT = 7
+PLAYER = 0
+AI = 1
 EMPTY = 0
 AI1_PIECE = 1
 AI2_PIECE = 2
 
+
 # Display Settings
 SQUARESIZE = 70
 width = COLUMN_COUNT * SQUARESIZE
-height = (ROW_COUNT + 1) * SQUARESIZE
+height = (ROW_COUNT+1) * SQUARESIZE
 size = (width, height)
-RADIUS = int(SQUARESIZE / 2 - 5)
+RADIUS = int(SQUARESIZE/2 - 5)
+# Colors
+RED = (255,0,0)
+YELLOW = (255,255,0)
+BLUE = (0,0,255)
+BLACK = (0,0,0)
 
 
 def setStartState():
@@ -99,7 +107,7 @@ def winningMove(board, piece):  # Check if there is a Four-in-a-row
                 return True
 
 
-def evaluateWindow(window, piece):
+def evaluateLine(line, piece):
     score = 0
     enemyPiece = AI1_PIECE
     if turn == AI1_PIECE:
@@ -111,14 +119,14 @@ def evaluateWindow(window, piece):
 
     if piece == AI1_PIECE:
         enemyPiece = AI2_PIECE
-    if window.count(piece) == 4:
+    if line.count(piece) == 4:
         score += scorecard[0]
-    elif window.count(piece) == 3 and window.count(EMPTY) == 1:
+    elif line.count(piece) == 3 and line.count(EMPTY) == 1:
         score += scorecard[1]
-    elif window.count(piece) == 2 and window.count(EMPTY) == 2:
+    elif line.count(piece) == 2 and line.count(EMPTY) == 2:
         score += scorecard[2]
 
-    if window.count(enemyPiece) == 3 and window.count(
+    if line.count(enemyPiece) == 3 and line.count(
             EMPTY) == 1:  # Attention Needed, Hat manchmal Aussete, muss wohl noch hoch
         score -= scorecard[3]
 
@@ -137,26 +145,26 @@ def evaluate(board, piece):
     for r in range(ROW_COUNT):
         row_array = [int(i) for i in list(board[r, :])]
         for c in range(COLUMN_COUNT - 3):
-            window = row_array[c:c + 4]
-            score += evaluateWindow(window, piece)
+            line = row_array[c:c + 4]
+            score += evaluateLine(line, piece)
 
     ## Score Vertical
     for c in range(COLUMN_COUNT):
         col_array = [int(i) for i in list(board[:, c])]
         for r in range(ROW_COUNT - 3):
-            window = col_array[r:r + 4]
-            score += evaluateWindow(window, piece)
+            line = col_array[r:r + 4]
+            score += evaluateLine(line, piece)
 
     ## Score sloped diagonal
     for r in range(ROW_COUNT - 3):
         for c in range(COLUMN_COUNT - 3):
-            window = [board[r + i][c + i] for i in range(4)]
-            score += evaluateWindow(window, piece)
+            line = [board[r + i][c + i] for i in range(4)]
+            score += evaluateLine(line, piece)
 
     for r in range(ROW_COUNT - 3):
         for c in range(COLUMN_COUNT - 3):
-            window = [board[r + 3 - i][c + i] for i in range(4)]
-            score += evaluateWindow(window, piece)
+            line = [board[r + 3 - i][c + i] for i in range(4)]
+            score += evaluateLine(line, piece)
 
     return score
 
@@ -264,7 +272,7 @@ wincounterAI1 = 0
 wincounterAI2 = 0
 
 #Gameloop
-for x in range(1,10):
+for x in range(1,AMOUNT_ROUND):
 
     print ("round ", x, "started...")
 

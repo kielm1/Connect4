@@ -1,48 +1,49 @@
 import numpy as np
+import time
 import random
-import pygame
 import sys
 import math
-import time
-
-BLUE = (0, 0, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-YELLOW = (255, 255, 0)
-
-ROW_COUNT = 6
-COLUMN_COUNT = 7
-
-PLAYER = 0
-AI = 1
-
-DEPTH_AI1 = 2  # Difficulty => How deep shall the AI search
-DEPTH_AI2 = 5  # Difficulty => How deep shall the AI search
-
-# The score for:
-# - [0]: window of 4 own Pieces
-# - [1]: window of 3 own Pieces and 1 empty
-# - [2]: window of 2 own Pieces and 2 empty
-# - [3]: window of 3 enemy Pieces and 1 empty (counts negative)
-
-scorecardAI1 = [1000, 5, 5, 4]
-scorecardAI2 = [1000, 5, 2, 4]
-
-# Original Scorecard: Spielt gut, hat aber selten Aussetzter beim erkennen von horizontalen 4er
-# scorecard = [1000, 5, 2, 4]
+import pygame
 
 
 # Status of gamefield
+ROW_COUNT = 6
+COLUMN_COUNT = 7
+PLAYER = 0
+AI = 1
 EMPTY = 0
 PLAYER_PIECE = 1
 AI_PIECE = 2
 
+
 # Display Settings
 SQUARESIZE = 70
 width = COLUMN_COUNT * SQUARESIZE
-height = (ROW_COUNT + 1) * SQUARESIZE
+height = (ROW_COUNT+1) * SQUARESIZE
 size = (width, height)
-RADIUS = int(SQUARESIZE / 2 - 5)
+RADIUS = int(SQUARESIZE/2 - 5)
+# Colors
+RED = (255,0,0)
+YELLOW = (255,255,0)
+BLUE = (0,0,255)
+BLACK = (0,0,0)
+
+
+#KI Settings
+DEPTH_AI1 = 2  # Difficulty => How deep shall the AI search
+DEPTH_AI2 = 5  # Difficulty => How deep shall the AI search
+
+# The score for:
+# - [0]: line of 4 own Pieces
+# - [1]: line of 3 own Pieces and 1 empty
+# - [2]: line of 2 own Pieces and 2 empty
+# - [3]: line of 3 enemy Pieces and 1 empty (counts negative)
+
+scorecardAI1 = [1000, 5, 5, 20]
+scorecardAI2 = [1000, 5, 2, 20]
+
+# scorecard = [1000, 5, 2, 4]: Spielt gut, hat aber selten Aussetzter beim erkennen von horizontalen 4er
+
 
 
 def setStartState():
@@ -69,36 +70,37 @@ def printTerminal(board):
 
 
 def winningMove(board, piece):  # Check if there is a Four-in-a-row
-    # Check horizontal locations for win
-    for c in range(COLUMN_COUNT - 3):
-        for r in range(ROW_COUNT):
-            if board[r][c] == piece and board[r][c + 1] == piece and board[r][c + 2] == piece and board[r][
-                c + 3] == piece:
-                return True
 
-    # Check vertical locations for win
+    # Checkw vertical locations for for FourInARow
     for c in range(COLUMN_COUNT):
         for r in range(ROW_COUNT - 3):
             if board[r][c] == piece and board[r + 1][c] == piece and board[r + 2][c] == piece and board[r + 3][
                 c] == piece:
                 return True
 
-    # Check positively sloped diaganols
+    # Checks horizontal locations for FourInARow
     for c in range(COLUMN_COUNT - 3):
-        for r in range(ROW_COUNT - 3):
-            if board[r][c] == piece and board[r + 1][c + 1] == piece and board[r + 2][c + 2] == piece and board[r + 3][
+        for r in range(ROW_COUNT):
+            if board[r][c] == piece and board[r][c + 1] == piece and board[r][c + 2] == piece and board[r][
                 c + 3] == piece:
                 return True
 
-    # Check negatively sloped diaganols
+    # Check negatively sloped diaganols for FourInARow
     for c in range(COLUMN_COUNT - 3):
         for r in range(3, ROW_COUNT):
             if board[r][c] == piece and board[r - 1][c + 1] == piece and board[r - 2][c + 2] == piece and board[r - 3][
                 c + 3] == piece:
                 return True
 
+    # Check positively sloped diaganols for FourInARow
+    for c in range(COLUMN_COUNT - 3):
+        for r in range(ROW_COUNT - 3):
+            if board[r][c] == piece and board[r + 1][c + 1] == piece and board[r + 2][c + 2] == piece and board[r + 3][
+                c + 3] == piece:
+                return True
 
-def evaluateWindow(window, piece):
+
+def evaluateLine(line, piece):
     score = 0
     enemyPiece = PLAYER_PIECE
     if turn == PLAYER_PIECE:
@@ -110,14 +112,14 @@ def evaluateWindow(window, piece):
 
     if piece == PLAYER_PIECE:
         enemyPiece = AI_PIECE
-    if window.count(piece) == 4:
+    if line.count(piece) == 4:
         score += scorecard[0]
-    elif window.count(piece) == 3 and window.count(EMPTY) == 1:
+    elif line.count(piece) == 3 and line.count(EMPTY) == 1:
         score += scorecard[1]
-    elif window.count(piece) == 2 and window.count(EMPTY) == 2:
+    elif line.count(piece) == 2 and line.count(EMPTY) == 2:
         score += scorecard[2]
 
-    if window.count(enemyPiece) == 3 and window.count(
+    if line.count(enemyPiece) == 3 and line.count(
             EMPTY) == 1:  # Attention Needed, Hat manchmal Aussete, muss wohl noch hoch
         score -= scorecard[3]
 
@@ -130,32 +132,32 @@ def evaluate(board, piece):
     ## Score center column
     center_array = [int(i) for i in list(board[:, COLUMN_COUNT // 2])]
     center_count = center_array.count(piece)
-    score += center_count * 3
+    score += center_count * 2 # Original 3, but seems too focused on Middle => Overseas 4inarow because prefer setup own pressure
 
     ## Score Horizontal
     for r in range(ROW_COUNT):
         row_array = [int(i) for i in list(board[r, :])]
         for c in range(COLUMN_COUNT - 3):
-            window = row_array[c:c + 4]
-            score += evaluateWindow(window, piece)
+            line = row_array[c:c + 4]
+            score += evaluateLine(line, piece)
 
     ## Score Vertical
     for c in range(COLUMN_COUNT):
         col_array = [int(i) for i in list(board[:, c])]
         for r in range(ROW_COUNT - 3):
-            window = col_array[r:r + 4]
-            score += evaluateWindow(window, piece)
+            line = col_array[r:r + 4]
+            score += evaluateLine(line, piece)
 
     ## Score sloped diagonal
     for r in range(ROW_COUNT - 3):
         for c in range(COLUMN_COUNT - 3):
-            window = [board[r + i][c + i] for i in range(4)]
-            score += evaluateWindow(window, piece)
+            line = [board[r + i][c + i] for i in range(4)]
+            score += evaluateLine(line, piece)
 
     for r in range(ROW_COUNT - 3):
         for c in range(COLUMN_COUNT - 3):
-            window = [board[r + 3 - i][c + i] for i in range(4)]
-            score += evaluateWindow(window, piece)
+            line = [board[r + 3 - i][c + i] for i in range(4)]
+            score += evaluateLine(line, piece)
 
     return score
 
@@ -341,5 +343,5 @@ while not gameOver:  # Game Loop
             turn = turn % 2  # Turn even => Human, Turn odd => AI
 
     if gameOver:
-        print("The game is over!")
-        pygame.time.wait(10000)
+        print("Game Over")
+        pygame.time.wait(60000)
