@@ -7,7 +7,7 @@ import pygame
 
 
 #KI Settings
-DEPTH = 5 # Difficulty => How deep shall the AI search
+DEPTH = 3 # Difficulty => How deep shall the AI search
 
 # The score for:
 # - [0]: line of 4 own Pieces
@@ -15,7 +15,7 @@ DEPTH = 5 # Difficulty => How deep shall the AI search
 # - [2]: line of 2 own Pieces and 2 empty
 # - [3]: line of 3 enemy Pieces and 1 empty (counts negative)
 
-scorecard = [1000, 5, 2, 7]
+scorecard = [1000, 5, 3, 7]
 # Original Scorecard: Spielt gut, hat aber selten Aussetzter beim erkennen von horizontalen 4er
 # scorecard = [1000, 5, 2, 4]
 
@@ -327,4 +327,4 @@ while not gameOver: #Game Loop
 
 	if gameOver:
 		print("The game is over!")
-		pygame.time.wait(10000)
+		pygame.time.wait(5000)
