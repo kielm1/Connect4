@@ -15,11 +15,10 @@ scorecard = [1000, 5, 2, 7]
 # Status of gamefield
 ROWS = 6
 COLS = 7
-PLAYER = 0
 AI = 1
-EMPTY = 0
-PLAYER_PIECE = 1
-AI_PIECE = 2
+EMPTY = ' '
+PLAYER_PIECE = 'X'
+AI_PIECE = 'O'
 
 
 # Display Settings
