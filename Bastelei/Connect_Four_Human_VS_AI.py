@@ -7,7 +7,7 @@ import pygame
 
 
 #KI Settings
-DEPTH = 3 # Difficulty => How deep shall the AI search
+DEPTH = 4 # Difficulty => How deep shall the AI search
 
 # The score for:
 # - [0]: line of 4 own Pieces
@@ -235,7 +235,7 @@ def printGUI(board):
 board = setStartState()
 gameOver = False
 
-pygame.init()
+pygame.init() # Nötig um alle Module von pygame zu initialisieren
 
 
 
