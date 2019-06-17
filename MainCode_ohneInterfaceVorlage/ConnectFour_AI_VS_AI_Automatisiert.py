@@ -6,10 +6,7 @@ import math
 import pygame
 
 '''
-
 Two AI's play C4. Just a testclass with no GUI. 
-
-
 '''
 
 #How many rounds shall the bots play?

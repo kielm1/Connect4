@@ -1,7 +1,6 @@
 import numpy as np
 import time
 import random
-import sys
 import math
 import pygame
 
@@ -31,7 +30,7 @@ BLACK = (0,0,0)
 
 #KI Settings
 DEPTH_AI1 = 3  # Difficulty => How deep shall the AI search
-DEPTH_AI2 = 3  # Difficulty => How deep shall the AI search
+DEPTH_AI2 = 5  # Difficulty => How deep shall the AI search
 
 # The score for:
 # - [0]: line of 4 own Pieces
@@ -344,4 +343,4 @@ while not gameOver:  # Game Loop
 
     if gameOver:
         print("Game Over")
-        pygame.time.wait(60000)
+        pygame.time.wait(6000)

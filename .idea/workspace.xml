@@ -11,10 +11,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bastelei/ConnectFour_AI_VS_RNG_Automatisiert.py">
+        <entry file="file://$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/ConnectFour_AI_VS_AI.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+            <state relative-caret-position="34">
+              <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -23,10 +23,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bastelei/ConnectFour_AI_VS_AI.py">
+        <entry file="file://$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/ConnectFour_AI_VS_AI_Automatisiert.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="51">
+              <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/Connect_Four_Human_VS_RngAI.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -35,30 +46,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Bastelei/Connect_Four_Human_VS_AI.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="237" column="65" selection-start-line="237" selection-start-column="65" selection-end-line="237" selection-end-column="65" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bastelei/Connect_Four_Human_VS_Human.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-459">
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Bastelei/Connect_Four_Human_VS_RngAI.py">
+        <entry file="file://$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/ConnectFour_AI_VS_RNG_Automatisiert.py">
           <provider selected="true" editor-type-id="text-editor">
             <state>
               <folding>
@@ -89,6 +77,8 @@
         <option value="$PROJECT_DIR$/Bastelei/ConnectFour_AI_VS_AI.py" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/Bastelei/Connect_Four_Human_VS_AI.py" />
+        <option value="$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/ConnectFour_AI_VS_AI.py" />
+        <option value="$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/ConnectFour_AI_VS_AI_Automatisiert.py" />
       </list>
     </option>
   </component>
@@ -114,7 +104,7 @@
             <path>
               <item name="Connect4" type="b2602c69:ProjectViewProjectNode" />
               <item name="Connect4" type="462c0819:PsiDirectoryNode" />
-              <item name="Bastelei" type="462c0819:PsiDirectoryNode" />
+              <item name="MainCode_ohneInterfaceVorlage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -138,8 +128,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Connect_Four_Human_VS_AI">
-    <configuration name="ConnectFour_AI_VS_AI" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.ConnectFour_AI_VS_RNG_Automatisiert">
+    <configuration name="ConnectFour_AI_VS_AI (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Connect-Four" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -147,11 +137,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Bastelei" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MainCode_ohneInterfaceVorlage" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Bastelei/ConnectFour_AI_VS_AI.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/ConnectFour_AI_VS_AI.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ConnectFour_AI_VS_AI_Automatisiert" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Connect-Four" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MainCode_ohneInterfaceVorlage" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/ConnectFour_AI_VS_AI_Automatisiert.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -168,11 +179,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Bastelei" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/MainCode_ohneInterfaceVorlage" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Bastelei/ConnectFour_AI_VS_RNG_Automatisiert.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/ConnectFour_AI_VS_RNG_Automatisiert.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -223,34 +234,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Connect-Four" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ConnectFour_AI_VS_RNG_Automatisiert" />
+        <item itemvalue="Python.ConnectFour_AI_VS_AI_Automatisiert" />
+        <item itemvalue="Python.ConnectFour_AI_VS_AI (1)" />
         <item itemvalue="Python.Connect_Four_Human_VS_AI" />
         <item itemvalue="Python.Connect_Four_Human_VS_RngAI" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.ConnectFour_AI_VS_AI" />
-        <item itemvalue="Python.ConnectFour_AI_VS_RNG_Automatisiert" />
       </list>
     </recent_temporary>
   </component>
@@ -269,14 +259,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24622716" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24622716" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.15070923" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.48404256" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -299,73 +288,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/board.py">
+    <entry file="file://$PROJECT_DIR$/board.py" />
+    <entry file="file://$PROJECT_DIR$/game.py" />
+    <entry file="file://$PROJECT_DIR$/player.py" />
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/config.py" />
+    <entry file="file://$PROJECT_DIR$/Bastelei/ConnectFour_AI_VS_RNG_Automatisiert.py" />
+    <entry file="file://$PROJECT_DIR$/Bastelei/ConnectFour_AI_VS_AI.py" />
+    <entry file="file://$PROJECT_DIR$/Bastelei/Connect_Four_Human_VS_Human.py" />
+    <entry file="file://$PROJECT_DIR$/Bastelei/Connect_Four_Human_VS_RngAI.py" />
+    <entry file="file://$PROJECT_DIR$/Bastelei/Connect_Four_Human_VS_AI.py" />
+    <entry file="file://$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/ConnectFour_AI_VS_AI.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="92" column="18" selection-start-line="92" selection-start-column="18" selection-end-line="92" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="35" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#23#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1802">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bastelei/ConnectFour_AI_VS_RNG_Automatisiert.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        <state relative-caret-position="34">
+          <caret line="19" column="32" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bastelei/ConnectFour_AI_VS_AI.py">
+    <entry file="file://$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/ConnectFour_AI_VS_AI_Automatisiert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="51">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="52" lean-forward="true" selection-start-line="24" selection-start-column="52" selection-end-line="24" selection-end-column="52" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bastelei/Connect_Four_Human_VS_Human.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Bastelei/Connect_Four_Human_VS_RngAI.py">
+    <entry file="file://$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/Connect_Four_Human_VS_RngAI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
@@ -374,10 +327,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Bastelei/Connect_Four_Human_VS_AI.py">
+    <entry file="file://$PROJECT_DIR$/MainCode_ohneInterfaceVorlage/ConnectFour_AI_VS_RNG_Automatisiert.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="237" column="65" selection-start-line="237" selection-start-column="65" selection-end-line="237" selection-end-column="65" />
+        <state>
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
